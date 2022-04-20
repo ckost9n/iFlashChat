@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WelcomeViewController.swift
 //  iFlashChat
 //
 //  Created by Konstantin on 20.04.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WelcomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
