@@ -8,6 +8,9 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
+    
+    @IBOutlet var emailTextField: UIView!
+    @IBOutlet var passwordTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +18,9 @@ class RegisterViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func registerPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "RegistorToChat", sender: nil)
+    }
 
     /*
     // MARK: - Navigation

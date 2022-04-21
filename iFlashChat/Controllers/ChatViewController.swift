@@ -8,6 +8,9 @@
 import UIKit
 
 class ChatViewController: UIViewController {
+    
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var messageTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
