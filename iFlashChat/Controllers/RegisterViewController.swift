@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController {
     
-    @IBOutlet var emailTextField: UIView!
+    @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
 
     override func viewDidLoad() {
@@ -19,7 +20,19 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "RegistorToChat", sender: nil)
+        
+        guard let email = emailTextField.text,
+              let password = passwordTextField.text else { return }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let e = error {
+                print(e.localizedDescription)
+            } else {
+                self.performSegue(withIdentifier: "RegistorToChat", sender: self)
+            }
+        }
+        
+        
     }
 
     /*

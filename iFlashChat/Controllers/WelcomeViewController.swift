@@ -26,6 +26,7 @@ class WelcomeViewController: UIViewController {
             Timer.scheduledTimer(withTimeInterval: 0.1 * Double(letter.offset), repeats: false) { timer in
                 self.titleLabel.text! += String(letter.element)
             }
+            
         }
     }
 
