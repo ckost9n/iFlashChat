@@ -12,16 +12,29 @@ class ChatViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var messageTextField: UITextField!
+    
+    private var messages: [Message] = [
+        Message(sender: "1@1.com", body: "Hey!"),
+        Message(sender: "a@b.com", body: "Hello!"),
+        Message(sender: "1@1.com", body: "What's up?")
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setDelegates()
         setupView()
     }
     
     private func setupView() {
-        title = "⚡️FlashChat"
+        title = K.appName
         navigationItem.hidesBackButton = true
+        
+        tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
+    }
+    
+    private func setDelegates() {
+        tableView.dataSource = self
     }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
@@ -33,15 +46,25 @@ class ChatViewController: UIViewController {
           print("Error signing out: %@", signOutError)
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+extension ChatViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! MessageCell
+        let message = messages[indexPath.row]
+        cell.label.text = message.body
+        
+        return cell
+    }
+    
+    
+}
+
+

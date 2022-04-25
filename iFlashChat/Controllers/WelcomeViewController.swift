@@ -20,7 +20,7 @@ class WelcomeViewController: UIViewController {
     
     private func animationText() {
         titleLabel.text = ""
-        let titleText = "⚡️FlashChat"
+        let titleText = K.appName
         
         for letter in titleText.enumerated() {
             Timer.scheduledTimer(withTimeInterval: 0.1 * Double(letter.offset), repeats: false) { timer in
