@@ -210,6 +210,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="paperplane.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="sendPressed:" destination="Mz1-N4-s7M" eventType="touchUpInside" id="Agg-Vp-o8D"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="BrandPurple"/>
@@ -243,6 +246,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="messageTextField" destination="EId-M2-3Vs" id="uyA-hP-G4F"/>
                         <outlet property="tableView" destination="xfv-XX-tY2" id="650-hb-g6t"/>
                     </connections>
                 </viewController>
