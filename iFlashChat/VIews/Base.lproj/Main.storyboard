@@ -245,7 +245,13 @@
                             <constraint firstItem="xfv-XX-tY2" firstAttribute="top" secondItem="Et6-4a-ogv" secondAttribute="top" id="zT8-TM-biX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Pc2-4z-8vM"/>
+                    <navigationItem key="navigationItem" id="Pc2-4z-8vM">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="rHW-XA-D9z">
+                            <connections>
+                                <action selector="logOutPressed:" destination="Mz1-N4-s7M" id="5AQ-eY-PrE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="xfv-XX-tY2" id="650-hb-g6t"/>
                     </connections>
@@ -268,7 +274,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="ial-1e-8l6">
                                         <rect key="frame" x="0.0" y="20" width="414" height="137"/>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwj-sk-TWX">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1@1.com" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwj-sk-TWX">
                                         <rect key="frame" x="48" y="50" width="318" height="45"/>
                                         <color key="textColor" name="BrandBlue"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -304,7 +310,7 @@
                                             <action selector="loginPressed:" destination="1sH-hb-gFc" eventType="touchUpInside" id="Ynu-aq-7D7"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZlX-E8-fhR">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZlX-E8-fhR">
                                         <rect key="frame" x="48" y="50" width="318" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
